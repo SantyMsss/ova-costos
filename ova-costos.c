@@ -51,6 +51,14 @@ void calcular_valores(int meses) {
     printf("Suma de X^2: %d\n", sumaX2);
     printf("Suma de Y^2: %.2f\n", sumaY2);
     printf("Suma de X * Y: %.2f\n", sumaXY);
+
+    // Calcular el valor de b y a usando las fórmulas
+    float b = (meses * sumaXY - sumaX * sumaY) / (meses * sumaX2 - sumaX * sumaX);
+    float a = (sumaY - b * sumaX) / meses;
+
+    // Mostrar los valores de a y b
+    printf("\nEl valor de b es: %.6f\n", b);
+    printf("El valor de a es: %.6f\n", a);
 }
 
 int main() {
