@@ -22,6 +22,15 @@ JNIEXPORT void JNICALL Java_ejemplojni_lib_JavaCostos_calcularValores
     // Llamada a las funciones auxiliares
     calcular_pronostico(a, b, meses, meses_pronostico, &total_pronostico);
     precio_venta = calcular_precio_venta(&total_costo_produccion);
+    
+    // Llamar a la función generar_estado_resultados con los valores calculados
+    generar_estado_resultados(total_pronostico, precio_venta, total_costo_produccion);
+}
+
+// Implementación de la función nativa generarEstadoResultados
+JNIEXPORT void JNICALL Java_ejemplojni_lib_JavaCostos_generarEstadoResultados
+  (JNIEnv *env, jobject obj, jfloat total_pronostico, jfloat precio_venta, jfloat total_costo_produccion) {
+    
     generar_estado_resultados(total_pronostico, precio_venta, total_costo_produccion);
 }
 
